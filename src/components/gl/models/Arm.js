@@ -1,8 +1,9 @@
 import { useRef, useEffect } from "react"
 import { useFrame } from "@react-three/fiber"
-import { useGLTF } from "@react-three/drei"
+import { useGLTF, useTexture } from "@react-three/drei"
 import { animated, SpringValue } from "@react-spring/three"
 
+import matcapAssetWhite from "./../../../assets/images/matcap/white.png"
 import turntableGLTF from "./../../../assets/gltf/turntable.gltf"
 import { APP_STATES } from "./../../../config"
 import useStore from "./../../../store"
@@ -16,6 +17,7 @@ const Arm = props => {
   const currentSongDuration = useStore(state => state.currentSongDuration)
   const { nodes } = useGLTF(turntableGLTF)
   const appStateRef = useRef()
+  const matcapWhite = useTexture(matcapAssetWhite)
 
   useEffect(() => useStore.subscribe(
     appState => (appStateRef.current = appState),
@@ -42,27 +44,30 @@ const Arm = props => {
       <group position={[-0.41, -0.1, 0.15]}>
         <mesh
           geometry={nodes.player003.geometry}
-          material={nodes.player003.material}
+          // material={nodes.player003.material}
           castShadow
           receiveShadow
           position={[0.29, 0.1, 0.27]}
           rotation={[0, 1.03, 0]}
-          scale={[0.04, 0.01, 0.01]}
-        />
+          scale={[0.04, 0.01, 0.01]}>
+          <meshMatcapMaterial matcap={matcapWhite} />
+        </mesh>
         <mesh
           geometry={nodes.Vert.geometry}
-          material={nodes.Vert.material}
+          // material={nodes.Vert.material}
           castShadow
           receiveShadow
           position={[0.41, 0.1, -0.13]}
-          rotation={[0, 1.57, 0]}
-        />
+          rotation={[0, 1.57, 0]}>
+          <meshMatcapMaterial matcap={matcapWhite} />
+        </mesh>
         <mesh
           geometry={nodes.needke.geometry}
-          material={nodes.needke.material}
+          // material={nodes.needke.material}
           castShadow
-          receiveShadow
-        />
+          receiveShadow>
+          <meshMatcapMaterial matcap={matcapWhite} />
+        </mesh>
       </group>
     </animated.group >
   )

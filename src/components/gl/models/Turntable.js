@@ -1,42 +1,43 @@
-import { useGLTF } from "@react-three/drei"
-import { animated } from "@react-spring/three"
+import { useGLTF, useTexture } from "@react-three/drei"
 
+import matcapAssetBlack from "./../../../assets/images/matcap/black.png"
+import matcapAssetWhite from "./../../../assets/images/matcap/white.png"
 import turntableGLTF from "./../../../assets/gltf/turntable.gltf"
 
 const Turntable = props => {
-  const { nodes, materials } = useGLTF(turntableGLTF)
+  const matcapBlack = useTexture(matcapAssetBlack)
+  const matcapWhite = useTexture(matcapAssetWhite)
+  const { nodes } = useGLTF(turntableGLTF)
 
   return (
-    <animated.group 
-      {...props} 
-      dispose={null} 
-      >
+    <group {...props}>
       <mesh
         geometry={nodes.music_player.geometry}
         material={nodes.player_legs.material}
         castShadow
         receiveShadow>
+        <meshMatcapMaterial matcap={matcapBlack} />
         <mesh
           geometry={nodes.player.geometry}
-          material={nodes.player.material}
           castShadow
           receiveShadow
           position={[0, 0.05, 0]}
-          rotation={[0, 1.57, 0]}
-        />
+          rotation={[0, 1.57, 0]}>
+          <meshMatcapMaterial matcap={matcapWhite} />
+        </mesh>
         <group position={[0, 0.07, 0]} rotation={[0, 1.57, 0]}>
           <mesh
             geometry={nodes.Circle003.geometry}
-            material={nodes.Circle003.material}
             castShadow
-            receiveShadow
-          />
+            receiveShadow>
+            <meshMatcapMaterial matcap={matcapWhite} />
+          </mesh>
           <mesh
             geometry={nodes.Circle003_1.geometry}
-            material={materials.white}
             castShadow
-            receiveShadow
-          />
+            receiveShadow>
+            <meshMatcapMaterial matcap={matcapBlack} />
+          </mesh>
         </group>
         <mesh
           geometry={nodes.player_legs.geometry}
@@ -49,41 +50,41 @@ const Turntable = props => {
         />
         <mesh
           geometry={nodes.player_knob001.geometry}
-          material={nodes.player_knob001.material}
           castShadow
           receiveShadow
           position={[0.4, 0.05, 0.3]}
           rotation={[0, 1.57, 0]}
-          scale={[0.74, 0.74, 0.74]}
-        />
+          scale={[0.74, 0.74, 0.74]}>
+          <meshMatcapMaterial matcap={matcapWhite} />
+        </mesh>
         <mesh
           geometry={nodes.player_knob.geometry}
-          material={nodes.player_knob.material}
           castShadow
           receiveShadow
           position={[0.47, 0.05, 0.3]}
           rotation={[0, 1.57, 0]}
-          scale={[0.74, 0.74, 0.74]}
-        />
+          scale={[0.74, 0.74, 0.74]}>
+          <meshMatcapMaterial matcap={matcapWhite} />
+        </mesh>
         <mesh
           geometry={nodes.player001.geometry}
-          material={nodes.player001.material}
           castShadow
           receiveShadow
           position={[0.41, 0.09, -0.2]}
-          rotation={[0, 1.57, 0]}
-        />
+          rotation={[0, 1.57, 0]}>
+          <meshMatcapMaterial matcap={matcapWhite} />
+        </mesh>
         <mesh
           geometry={nodes.player002.geometry}
-          material={nodes.player002.material}
           castShadow
           receiveShadow
           position={[0.41, 0.03, -0.13]}
           rotation={[0, 1.57, 0]}
-          scale={[0.19, 0.06, 0.06]}
-        />
+          scale={[0.19, 0.06, 0.06]}>
+          <meshMatcapMaterial matcap={matcapWhite} />
+        </mesh>
       </mesh>
-    </animated.group>
+    </group>
   )
 }
 
