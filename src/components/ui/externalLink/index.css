@@ -1,0 +1,22 @@
+.external-link {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  color: var(--color-grey);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.external-link:hover {
+  text-decoration: underline;
+}
+
+.external-link__icon {  
+  position: relative;
+  top: 3px;
+  margin-left: 0.25em;
+  display: inline-block;
+  stroke: currentColor;
+  transition: top 300ms ease-in-out;
+}

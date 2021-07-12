@@ -1,0 +1,75 @@
+:root {
+  --secondary-color: #202124;
+  --color-white: #d5d3d3;
+  --color-red: #e2192c;
+  --color-grey: #cccccc;
+}
+
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+       url(./assets/fonts/ArchivoBlack-Regular.ttf) format("truetype")
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  font-family: "Archivo Black", sans-serif;
+  color: var(--color-red);
+}
+
+button {
+  text-transform: uppercase;
+  background: var(--color-red);
+  color: var(--color-white);
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  width: 100%;
+  text-decoration: underline;
+  text-underline-offset: 1vh;
+  font-family: "Archivo Black", sans-serif;
+}
+
+p {
+  margin: 0;
+}
+          
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul + ul {
+  margin-top: 12px;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

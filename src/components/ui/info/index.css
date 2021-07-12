@@ -1,0 +1,28 @@
+.info {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: linear-gradient(0deg, rgb(133 67 47) 36%, rgb(241 177 154) 100%);
+  padding: 12px;
+  overflow: hidden;
+  overflow-y: scroll;
+  z-index: 998;
+}
+
+.info__content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.info__copy {
+  text-align: left;
+  font-size: 1rem;
+  color: var(--secondary-color);
+  margin-top: 12px;
+}
+
+.info__cta {
+  display: block;
+  margin: 24px 0;
+}
