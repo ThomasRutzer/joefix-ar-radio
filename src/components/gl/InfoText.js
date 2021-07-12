@@ -32,7 +32,7 @@ const InfoText = props => {
       <Text
         font={font}
         fontSize={0.15}
-        color="#d5d3d"
+        color="#d5d3d3"
         position-y={1}
         anchorX="center"
         anchorY="middle">
@@ -42,7 +42,7 @@ const InfoText = props => {
       <Text
         font={font}
         fontSize={0.1}
-        color="#d5d3d"
+        color="#d5d3d3"
         position-y={0.86}
         position-x={0.5}
         anchorX="center"
