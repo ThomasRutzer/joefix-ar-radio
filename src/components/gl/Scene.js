@@ -1,7 +1,7 @@
 import React, { Suspense, useRef } from "react"
+import { animated, useSpring } from "@react-spring/three"
 import { OrbitControls } from "@react-three/drei"
 import { useControls } from "leva"
-import { useSpring } from "@react-spring/three"
 
 import { APP_STATES, TRACKED_IMAGE_SIZE } from "./../../config"
 import useStore from "../../store"
@@ -56,10 +56,9 @@ function Scene() {
     onRest: () => useStore.setState({ appState: APP_STATES.SHALL_PLAY })
   })
 
-
   const enterTransitionInfoText = useSpring({
     to: { rotation: [0, 0, 0], opacity: 1 },
-    from: { rotation: [Math.PI, 0, 0], opacity: 0 },
+    from: { rotation: [-Math.PI, 0, 0], opacity: 0 },
     config: { mass: 0.5, tension: 120, friction: 12 },
     delay: 4700
   })
@@ -69,22 +68,23 @@ function Scene() {
       <Suspense fallback={null}>
         {sceneEntered &&
           <group
-            scale={[TRACKED_IMAGE_SIZE.width, TRACKED_IMAGE_SIZE.height, TRACKED_IMAGE_SIZE.depth]}
+            // scale={[TRACKED_IMAGE_SIZE.width * 0.5, TRACKED_IMAGE_SIZE.height * 0.5, TRACKED_IMAGE_SIZE.depth * 0.5]}
             rotation={[Math.PI / 2, 0, 0]}
-            
-            >
-            {/* <InfoText {...enterTransitionInfoText} />
-            <Arm {...enterTransitionArm} />*/}
-            {/* <Vinyl {...enterTransitionVinyl} /> */}
-            <Turntable {...enterTransitionTurntable} />
+          >
+            <InfoText {...enterTransitionInfoText} />
+            <Vinyl {...enterTransitionVinyl} />
+            <animated.group {...enterTransitionTurntable}>
+              <Arm {...enterTransitionArm} />
+              <Turntable />
+            </animated.group>
             <ambientLight intensity={tweaks.ambientLightIntensitity} />
-            {/* <spotLight
+            <spotLight
               penumbra={1}
               position={[tweaks.spotLightPos.x, tweaks.spotLightPos.y, tweaks.spotLightPos.z]}
               intensity={tweaks.spotLightIntensity}
               castShadow={false}
               shadow-bias={0}
-            /> */}
+            />
             <pointLight
               position={[tweaks.pointLightPos.x, tweaks.pointLightPos.y, tweaks.pointLightPos.z]}
               intensity={tweaks.pointLightIntensitiy}
