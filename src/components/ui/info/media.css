@@ -16,7 +16,7 @@
 
 .media__title {
   position: relative;
-  font-size: 8vw;
+  font-size: clamp(1rem, -0.175rem + 8.333vw, 3.5rem);
   line-height: 1.4;
   margin-bottom: -10px;
   text-transform: uppercase;
@@ -24,8 +24,5 @@
 
 .media__subtitle {
   display: block;
-  font-size: 4vw;
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 1.5rem);
 }
-
-
-/* clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%); */

@@ -1,4 +1,5 @@
 import React from "react"
+import { useTransition, animated, config } from "@react-spring/web"
 
 import { VIEWS } from "../../../config"
 import useStore from "./../../../store"
@@ -8,10 +9,19 @@ import ExternalLink from "./../externalLink"
 
 const Info = ({ onStartButton }) => {
   const view = useStore(store => store.view)
+
+  const transitions = useTransition(view !== VIEWS.SCENE, {
+    from: { opacity: 0, y: 300 },
+    enter: { opacity: 1, y: 0 },
+    leave: { opacity: 0, y: 300 },
+    delay: view !== VIEWS.SCENE ? 1000 : 0, 
+    config: config.molasses
+  })
+
   return (
-    <>
-      {view !== VIEWS.SCENE &&
-        <div className="info">
+    transitions(
+      (styles, item) => item &&
+        <animated.div className="info" style={styles}>
           <div className="info__content">
             <Media />
             <div className="info__explanation">
@@ -40,9 +50,8 @@ const Info = ({ onStartButton }) => {
               </ul>
             </div>
           </div>
-        </div>
-      }
-    </>
+        </animated.div>
+    )
   )
 }
 
