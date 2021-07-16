@@ -1,13 +1,13 @@
 .info {
   position: fixed;
-  bottom: 12px;
+  bottom: 0;
   left: 12px;
   right: 12px;
-  background: linear-gradient(0deg, rgb(133 67 47) 36%, rgb(241 177 154) 100%);
-  padding: 12px;
   overflow: hidden;
   overflow-y: scroll;
   z-index: 998;
+  opacity: 0;
+  animation: fadeIn 0.6s forwards, slideIn 0.6s forwards;
 }
 
 .info__content {
@@ -15,11 +15,15 @@
   margin: 0 auto;
 }
 
+.info__explanation {
+  padding: 24px 0;
+  box-sizing: border-box;
+}
+
 .info__copy {
   text-align: left;
-  font-size: 1rem;
-  color: var(--secondary-color);
-  margin-top: 12px;
+  line-height: 1.5;
+  color: var(--primary-color);
 }
 
 .info__cta {

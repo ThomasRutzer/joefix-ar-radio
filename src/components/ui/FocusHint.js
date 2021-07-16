@@ -2,15 +2,16 @@ import useStore from "../../store"
 import WireframeCover from "./wireframeCover"
 
 const FocusHint = () => {
-  const sceneEntered = useStore(state => state.sceneEntered)
+  const arEngineReady = useStore(state => state.arEngineReady)
+  const sceneEntered = useStore(store => store.sceneEntered)
 
   return (
     <>
-      {!sceneEntered && 
+      {!sceneEntered &&
         <div className="focus-hint">
-          <WireframeCover label="Focus EP cover" />
-        </div> 
-      } 
+          <WireframeCover label={arEngineReady ? "Focus EP cover" : "Preparing…"} />
+        </div>
+      }
     </>
   )
 }

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 
-import songAsset from "./../../assets/sounds/outfoxing.mp3"
-import atmoSoundAsset from "./../../assets/sounds/5sweep.wav"
+import songAsset from "./../../assets/sounds/song.mp3"
+import atmoSoundAsset from "./../../assets/sounds/atmo.mp3"
 import useStore from "../../store"
-import { APP_STATES, DELAY_UNTIL_SONG_STARTS } from "../../config";
+import { APP_STATES, DELAY_UNTIL_SONG_STARTS } from "../../config"
 import useTimeout from "../../hooks/useTimout"
 import AudioPlayer from "./AudioPlayer"
 
@@ -45,7 +45,6 @@ const Sound = () => {
       <AudioPlayer
         onPlay={() => useStore.setState({ appState: APP_STATES.PLAY })}
         src={atmoSoundAsset}
-        srcType="wav"
         shallPlay={atmoShallPlay}
         loop={true}
       />

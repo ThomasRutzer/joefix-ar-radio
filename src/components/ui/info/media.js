@@ -10,7 +10,10 @@ const Media = () => {
         alt="Cover of Joe Fix – of ties & knives EP"
         src={trackedImage} />
       <div>
-        <h2 className="media__title">Listen to Joe Fix – of ties & knives EP.</h2>
+        <h2 className="media__subtitle">listen to</h2>
+        <h1 className="media__title">
+          Joe Fix – of ties & knives
+        </h1>
       </div>
     </div>
   )

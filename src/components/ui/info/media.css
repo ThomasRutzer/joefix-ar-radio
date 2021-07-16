@@ -1,6 +1,7 @@
 .media {
+  position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .media > img {
@@ -10,12 +11,21 @@
 
 .media > div {
   flex: 1;
+  color: var(--color-white);
 }
 
 .media__title {
-  font-size: 24px;
+  position: relative;
+  font-size: 8vw;
   line-height: 1.4;
+  margin-bottom: -10px;
   text-transform: uppercase;
-  margin-bottom: 12px;
-  margin-top: 0;
 }
+
+.media__subtitle {
+  display: block;
+  font-size: 4vw;
+}
+
+
+/* clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%); */
