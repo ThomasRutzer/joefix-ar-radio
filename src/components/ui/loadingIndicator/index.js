@@ -1,10 +1,14 @@
 import "./index.css"
-import WireframeCover from "../wireframeCover"
 
 const LoadingIndicator = () => {
   return (
     <div className="loading-indicator">
-      {<WireframeCover label={"Preparing…"} appearance="small" />}
+      <div className="loading-indicator__container">
+      <div className="loading-indicator__blood" />
+        <div className="loading-indicator__logo" />
+      </div>
+      <span className="loading-indicator__drop"></span>
+      <span className="loading-indicator__fill"></span>
     </div>
   )
 }
