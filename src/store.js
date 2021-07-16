@@ -1,12 +1,13 @@
 import create from "zustand"
 
-import { SONGS, VIEWS } from "./config"
+import { SONG, VIEWS } from "./config"
 
 const store = create(set => ({
   view: VIEWS.INTRO,
   appState: null,
-  sceneEntered: true,
-  currentSongName: SONGS[0].name,
+  arEngineReady: false,
+  sceneEntered: false,
+  currentSongName: SONG.name,
   currentSongDuration: null,
 }))
 
