@@ -1,4 +1,4 @@
-import React, { Suspense } from "react"
+import React, { Suspense, useCallback, useEffect } from "react"
 import {
   ARCanvas,
   NFTMarker
@@ -11,38 +11,57 @@ import vinylGLTF from "./../../../assets/gltf/vinyl.glb"
 import { TRACKED_IMAGE_SIZE, VIEWS } from "./../../../config"
 import useStore from "./../../../store"
 import Scene from "./../Scene"
+import FocusHint from "./../../ui/FocusHint"
 
 const CanvasContainer = () => {
   const view = useStore(store => store.view)
+  const sceneEntered = useStore(store => store.sceneEntered)
+
+  const onWorkerMessage = useCallback(({ type }) => {
+    if (type === "markerAdded") {
+      useStore.setState({ arEngineReady: true })
+    }
+
+    if (type === "found" && !sceneEntered) {
+      useStore.setState({ sceneEntered: true })
+    }
+  }, [sceneEntered])
 
   return (
     <>
       {view === VIEWS.SCENE &&
-        <div className="canvas-container">
-          <ARCanvas
-            interpolationFactor={24}
-            dpr={window.devicePixelRatio}
-            onCreated={({ gl }) => {
-              gl.logarithmicDepthBuffer = true
-              gl.setSize(window.innerWidth, window.innerHeight)
-            }}
-          >
-            <NFTMarker url={"data/marker/cover"}>
-              <group
-                position={[
-                  TRACKED_IMAGE_SIZE.width * 0.5,
-                  TRACKED_IMAGE_SIZE.height * 0.5,
-                  0
-                ]}>
-                {/* <mesh scale={[TRACKED_IMAGE_SIZE.width, TRACKED_IMAGE_SIZE.height, TRACKED_IMAGE_SIZE.depth]}>
-                  <boxBufferGeometry args={[1, 1, 1]} />
-                  <meshNormalMaterial opacity={0.5} transparent={true} />
-                </mesh> */}
+        <>
+          <FocusHint />
+          <div className="canvas-container">
+            <ARCanvas
+              interpolationFactor={24}
+              dpr={window.devicePixelRatio}
+              onCreated={({ gl }) => {
+                gl.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+                gl.setSize(window.innerWidth, window.innerHeight)
+              }}
+              onWorkerMessage={onWorkerMessage}
+            >
+              <NFTMarker
+
+                url={"data/marker/cover"}>
+                <group
+                  position={[
+                    TRACKED_IMAGE_SIZE.width * 0.5,
+                    TRACKED_IMAGE_SIZE.height * 0.5,
+                    0
+                  ]}>
+                  {sceneEntered &&
+                    <Scene />
+                  }
+                </group>
+              </NFTMarker>
+              {/* {sceneEntered &&
                 <Scene />
-              </group>
-            </NFTMarker>
-          </ARCanvas>
-        </div>
+              } */}
+            </ARCanvas>
+          </div>
+        </>
       }
     </>
   )

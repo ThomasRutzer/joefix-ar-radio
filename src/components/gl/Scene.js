@@ -25,10 +25,9 @@ function Scene() {
     },
   })
 
-  const sceneEntered = useStore(state => state.sceneEntered)
   const orbitControlsRef = useRef()
 
-  const enterTransitionTurntable = useSpring({
+  const enterTransitionTurntable= useSpring({
     to: { position: [0, 0, 0], rotation: [0, 0, 0] },
     from: { position: [0, 0, -2], rotation: [0, Math.PI * 3, 0] },
     config: { mass: 0.4, tension: 60, friction: 14 }
@@ -49,15 +48,15 @@ function Scene() {
   const enterTransitionArm = useSpring({
     from: { rotation: [0, 0, 0] },
     to: { rotation: [0, -0.09, 0] },
-    delay: 2000,
+    delay: 3000,
     config: {
       duration: 1000
     },
-    onRest: () => useStore.setState({ appState: APP_STATES.SHALL_PLAY })
+    onRest:() => useStore.setState({ appState: APP_STATES.SHALL_PLAY })
   })
 
   const enterTransitionInfoText = useSpring({
-    to: { rotation: [0, 0, 0], opacity: 1 },
+    to: { rotation: [-Math.PI / 2, 0, 0], opacity: 1 },
     from: { rotation: [-Math.PI, 0, 0], opacity: 0 },
     config: { mass: 0.5, tension: 120, friction: 12 },
     delay: 4700
@@ -66,31 +65,34 @@ function Scene() {
   return (
     <>
       <Suspense fallback={null}>
-        {sceneEntered &&
-          <group
-            // scale={[TRACKED_IMAGE_SIZE.width * 0.5, TRACKED_IMAGE_SIZE.height * 0.5, TRACKED_IMAGE_SIZE.depth * 0.5]}
-            rotation={[Math.PI / 2, 0, 0]}
-          >
-            <InfoText {...enterTransitionInfoText} />
-            <Vinyl {...enterTransitionVinyl} />
-            <animated.group {...enterTransitionTurntable}>
-              <Arm {...enterTransitionArm} />
-              <Turntable />
-            </animated.group>
-            <ambientLight intensity={tweaks.ambientLightIntensitity} />
-            <spotLight
-              penumbra={1}
-              position={[tweaks.spotLightPos.x, tweaks.spotLightPos.y, tweaks.spotLightPos.z]}
-              intensity={tweaks.spotLightIntensity}
-              castShadow={false}
-              shadow-bias={0}
-            />
-            <pointLight
-              position={[tweaks.pointLightPos.x, tweaks.pointLightPos.y, tweaks.pointLightPos.z]}
-              intensity={tweaks.pointLightIntensitiy}
-            />
-          </group>
-        }
+
+        <group
+          scale={[
+            TRACKED_IMAGE_SIZE.width, 
+            TRACKED_IMAGE_SIZE.height, 
+            TRACKED_IMAGE_SIZE.depth
+          ]}
+          rotation={[Math.PI / 2, 0, 0]}
+        >
+          <InfoText {...enterTransitionInfoText} />
+          <Vinyl {...enterTransitionVinyl} />
+          <animated.group {...enterTransitionTurntable}>
+            <Arm {...enterTransitionArm}/>
+            <Turntable />
+          </animated.group>
+          <ambientLight intensity={tweaks.ambientLightIntensitity} />
+          <spotLight
+            penumbra={1}
+            position={[tweaks.spotLightPos.x, tweaks.spotLightPos.y, tweaks.spotLightPos.z]}
+            intensity={tweaks.spotLightIntensity}
+            castShadow={false}
+            shadow-bias={0}
+          />
+          <pointLight
+            position={[tweaks.pointLightPos.x, tweaks.pointLightPos.y, tweaks.pointLightPos.z]}
+            intensity={tweaks.pointLightIntensitiy}
+          />
+        </group>
       </Suspense>
       <OrbitControls ref={orbitControlsRef} />
     </>
