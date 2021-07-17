@@ -27,7 +27,7 @@ const Vinyl = (props) => {
     <animated.group {...props} ref={groupRef}>
       <group
         scale={[1.9, 1.9, 1.9]}
-        position={[0, 0.085, 0]}
+        position={[0, 0.1, 0]}
         rotation={[0, -Math.PI / 2, 0]}>
         <group position={[0, 0, 0]}>
           <group position={[0, 0, 0]}>
