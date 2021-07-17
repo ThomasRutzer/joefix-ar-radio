@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const AudioPlayer = ({ 
-  src, srcType = "mp3", loop, shallPlay,
-  onPlay = () => {}, onLoadedMetaData = () => {}, onEnded = () => {}
+  src, srcType = "mp3", shallPlay,
+  onPlay = () => {}, onLoadedMetaData = () => {}, onEnded = () => {},
+  ...props
 }) => {
   const audioRef = useRef()
   const [isPlaying, setIsPlaying] = useState(false)
@@ -32,7 +33,7 @@ const AudioPlayer = ({
       onEnded={onEnded}
       onLoadedMetadata={onLoadedMetaData}
       preload="auto"
-      loop={loop}
+      {...props}
       style={{ display: "none" }}>
       <source
         src={src}

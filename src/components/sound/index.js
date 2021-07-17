@@ -9,6 +9,7 @@ import AudioPlayer from "./AudioPlayer"
 
 const Sound = () => {
   const appState = useStore(state => state.appState)
+  const mute = useStore(state => state.mute)
   const [songShallPlay, setSongShallPlay] = useState(null)
   const [scheduleSongToPlay, setSchedulerForSongPlay] = useState(null)
   const [atmoShallPlay, setAtmoShallPlay] = useState(null)
@@ -41,12 +42,14 @@ const Sound = () => {
         shallPlay={songShallPlay}
         src={songAsset}
         loop={false}
+        muted={mute}
       />
       <AudioPlayer
         onPlay={() => useStore.setState({ appState: APP_STATES.PLAY })}
         src={atmoSoundAsset}
         shallPlay={atmoShallPlay}
         loop={true}
+        muted={mute}
       />
     </>
   )

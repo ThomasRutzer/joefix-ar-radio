@@ -1,0 +1,12 @@
+.ar-session-menu {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: 16px;
+  gap: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+  z-index: 98;
+}

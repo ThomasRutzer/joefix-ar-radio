@@ -7,8 +7,9 @@ const store = create(set => ({
   appState: null,
   arEngineReady: false,
   sceneEntered: false,
+  mute: false,
   currentSongName: SONG.name,
-  currentSongDuration: null,
+  currentSongDuration: null
 }))
 
 export default store
