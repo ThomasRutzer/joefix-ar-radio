@@ -8,7 +8,6 @@ const store = create(set => ({
   arEngineReady: false,
   sceneEntered: false,
   mute: false,
-  currentSongName: SONG.name,
   currentSongDuration: null
 }))
 
