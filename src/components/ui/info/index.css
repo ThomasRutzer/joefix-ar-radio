@@ -5,7 +5,7 @@
   right: 12px;
   overflow: hidden;
   overflow-y: scroll;
-  z-index: 998;
+  z-index: 99;
 }
 
 .info__content {
@@ -27,4 +27,5 @@
 .info__cta {
   display: block;
   margin: 24px 0;
+  width: 100%;
 }

@@ -1,21 +1,26 @@
-import React from "react"
+import React, { useState } from "react"
 import { useTransition, animated, config } from "@react-spring/web"
 
-import { VIEWS } from "../../../config"
-import useStore from "./../../../store"
 import "./index.css"
 import Media from "./media"
 import ExternalLink from "./../externalLink"
 
 const Info = ({ onStartButton }) => {
-  const view = useStore(store => store.view)
+  const [show, setShow] = useState(true)
 
-  const transitions = useTransition(view !== VIEWS.SCENE, {
+  const transitions = useTransition(show, {
     from: { opacity: 0, y: 300 },
     enter: { opacity: 1, y: 0 },
     leave: { opacity: 0, y: 300 },
-    delay: view !== VIEWS.SCENE ? 1000 : 0, 
-    config: config.molasses
+    delay: show ? 1000 : 0,
+    config: config.molasses,
+    onRest: () => {
+      console.log(!show ? onStartButton : null);
+
+      if (!show) {
+        onStartButton()
+      }
+    }
   })
 
   return (
@@ -29,9 +34,7 @@ const Info = ({ onStartButton }) => {
                 Welcome to the JOE FIX AR Radio. It's experimental, sometimes don't work and it's gonna be loud & fix.
                 But you'll be just fine, no worries!
               </p>
-              <span className="info__cta">
-                <button onClick={onStartButton}>Show me!</button>
-              </span>
+              <button className="info__cta" onClick={() => setShow(false)}>Show me!</button>
               <ul>
                 <li>
                   <ExternalLink label="turntable model" link="https://market.pmnd.rs/model/turntable"></ExternalLink>
@@ -45,7 +48,7 @@ const Info = ({ onStartButton }) => {
                   <ExternalLink label="listen on Bandcamp" link="https://joefix1.bandcamp.com/releases"></ExternalLink>
                 </li>
                 <li>
-                  <ExternalLink label="dev by Thomas Rutzer" link="https://thomasrutzer.dev/legal"></ExternalLink>
+                  <ExternalLink label="made by Thomas Rutzer" link="https://thomasrutzer.dev/legal"></ExternalLink>
                 </li>
               </ul>
             </div>
