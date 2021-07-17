@@ -40,6 +40,7 @@
 .loading-indicator__drop.loading-indicator__drop--small {
   width: 6px;
   height: 6px;
+  animation-duration: 3.5s;
 }
 
 .loading-indicator__drop.loading-indicator__drop--delay-300 {
