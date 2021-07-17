@@ -3,69 +3,41 @@ import { animated } from "@react-spring/three"
 import { useFrame } from "@react-three/fiber"
 
 import Text from "./Text"
-import useStore from "../../store"
+
+let angleTextRef = 0
+let angleTextRef1 = 0
 
 const InfoText = props => {
-  let angle = 0
   const textRef = useRef()
-  const currentSongName = useStore(state => state.currentSongName)
+  const textRef1 = useRef()
 
   useFrame(() => {
-    textRef.current.position.x += 0.001 * Math.cos(angle)
-    textRef.current.position.z += 0.001 * Math.sin(angle)
-    angle += 0.01
+    textRef.current.position.x += 0.001 * Math.cos(angleTextRef)
+    textRef.current.position.z += 0.001 * Math.sin(angleTextRef)
+    angleTextRef += 0.01
+
+    textRef1.current.position.x += 0.001 * Math.cos(angleTextRef1)
+    textRef1.current.position.z += 0.001 * Math.sin(angleTextRef1)
+    angleTextRef1 -= 0.02
   })
 
   return (
     <animated.group
       {...props}
-      ref={textRef}
       position-y={-.2}
-      position-x={1.8}>
+      position-x={1.4}>
       <Text
-        position={[-2.3, 1.7, 0]}
-        rotation={[Math.PI / 8,  - Math.PI / 8, 0]}
+        ref={textRef}
+        position={[-2, 1.8, 0]}
+        rotation={[Math.PI / 4, Math.PI / 6, Math.PI / 24]}
         opacity={props.opacity}
-        appearance="primary"
-        children="JOE" />
+        text="JOE" />
       <Text
-        position={[-2.5, 1, 0]}
-        rotation={[Math.PI / 8, Math.PI / 6, Math.PI / 24]}
+        ref={textRef1}
+        position={[-1.5, 1.3, 0]}
+        rotation={[Math.PI / 4, - Math.PI / 8, 0]}
         opacity={props.opacity}
-        appearance="secondary"
-        children="FIX" />
-      {/* <Text
-        font={font}
-        fontSize={0.15}
-        color="#d5d3d3"
-        position-y={1}
-        anchorX="center"
-        anchorY="middle">
-        JOE FIX
-        <TextMaterial opacity={props.opacity} />
-      </Text>
-      <Text
-        font={font}
-        fontSize={0.1}
-        color="#d5d3d3"
-        position-y={0.86}
-        position-x={0.5}
-        anchorX="center"
-        anchorY="middle">
-        is playing
-        <TextMaterial opacity={props.opacity} />
-      </Text>
-      <Text
-        font={font}
-        fontSize={0.15}
-        color="#e2192c"
-        position-y={0.7}
-        position-x={0.2}
-        anchorX="center"
-        anchorY="middle">
-        {currentSongName}
-        <TextMaterial opacity={props.opacity} />
-      </Text> */}
+        text="FIX" />
     </animated.group>
   )
 }
