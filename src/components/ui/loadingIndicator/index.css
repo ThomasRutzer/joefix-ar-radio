@@ -2,9 +2,9 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  background: var(--secondary-color);
-  width: 100vw;
-  height: 100vh;
+  background: var(--color-black);
+  width: 100%;
+  height: 100%;
   z-index: 98;
   overflow: hidden;
 }
@@ -12,8 +12,8 @@
 .loading-indicator__logo {
   width: 200px;
   height: 120px;
-  background-image: url("./../../../assets/images/logo.png");
-  background-color: var(--secondary-color);
+  background-image: url("./../../../assets/images/logo-chrome.png");
+  background-color: var(--color-black);
   background-size: contain;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
@@ -49,8 +49,8 @@
 
 .loading-indicator__fill {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   bottom: 0;
   left: 0;
   background-color: var(--color-red);
@@ -58,7 +58,7 @@
   transform-origin: left bottom;
 }
 
-.loading-indicator__fill::before {
+.loading-indicator__fill:before {
   content: "";
   display: block;
   position: absolute;

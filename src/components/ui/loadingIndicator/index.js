@@ -1,4 +1,6 @@
 import { useTransition, animated, config } from "@react-spring/web"
+import { useEffect } from "react"
+import useTimeout from "../../../hooks/useTimout"
 
 import { VIEWS } from "../../../config"
 import useStore from "./../../../store"
@@ -21,6 +23,10 @@ const LoadingIndicator = () => {
     leave: { opacity: 0 },
     config: config.molasses
   })
+
+  useTimeout(() => {
+    document.querySelector("meta[name='theme-color']").setAttribute("content", "#e2192c");
+  }, 90000)
 
   return (
     <>
