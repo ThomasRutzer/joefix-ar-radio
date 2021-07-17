@@ -12,6 +12,7 @@ import { TRACKED_IMAGE_SIZE, VIEWS } from "./../../../config"
 import useStore from "./../../../store"
 import Scene from "./../Scene"
 import FocusHint from "./../../ui/FocusHint"
+import ARSessionMenu from "../../ui/aSessionMenu"
 
 const CanvasContainer = () => {
   const view = useStore(store => store.view)
@@ -31,6 +32,7 @@ const CanvasContainer = () => {
     <>
       {view === VIEWS.SCENE &&
         <>
+          <ARSessionMenu />
           <FocusHint />
           <div className="canvas-container">
             <ARCanvas
