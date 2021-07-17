@@ -1,5 +1,5 @@
 :root {
-  --secondary-color: #202124;
+  --color-black: #202124;
   --color-white: #d5d3d3;
   --color-red: #e2192c;
   --color-grey: #cccccc;
@@ -19,24 +19,30 @@ body,
   margin: 0;
   padding: 0;
   width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   font-family: "Archivo Black", sans-serif;
-  color: var(--color-red);
+  font-size: 16px;
+  color: var(--color-white);
 }
 
 button {
   text-transform: uppercase;
-  background: var(--color-red);
-  color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-red);
   border: none;
   padding: 12px;
   font-weight: bold;
-  width: 100%;
-  text-decoration: underline;
-  text-underline-offset: 1vh;
   font-family: "Archivo Black", sans-serif;
+  min-width: 120px;
 }
 
-p {
+button:active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+h1, h2, p {
   margin: 0;
 }
           
