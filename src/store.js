@@ -1,6 +1,6 @@
 import create from "zustand"
 
-import { SONG, VIEWS } from "./config"
+import { VIEWS } from "./config"
 
 const store = create(set => ({
   view: VIEWS.INTRO,
