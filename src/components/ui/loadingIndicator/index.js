@@ -1,5 +1,4 @@
 import { useTransition, animated, config } from "@react-spring/web"
-import { useEffect } from "react"
 import useTimeout from "../../../hooks/useTimout"
 
 import { VIEWS } from "../../../config"
@@ -11,9 +10,9 @@ const LoadingIndicator = () => {
   const arEngineReady = useStore(state => state.arEngineReady)
 
   const labelTransitions = useTransition(view !== VIEWS.INTRO, {
-    from: { opacity: 0, y: -30 },
+    from: { opacity: 0, y: 30 },
     enter: { opacity: 1, y: 0 },
-    delay: 700,
+    delay: 300,
     config: config.molasses
   })
 
@@ -35,7 +34,7 @@ const LoadingIndicator = () => {
           <animated.div className="loading-indicator" style={wrapperStyles}>
             {labelTransitions(
               (labelStyes, label) => label &&
-                <animated.p className="loading-indicator__label" style={labelStyes}>Preparing</animated.p>
+                <animated.p className="loading-indicator__label" style={labelStyes}>Pump up the volume…</animated.p>
             )}
             <div className="loading-indicator__logo" />
             <span className="loading-indicator__drop"></span>

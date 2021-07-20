@@ -9,8 +9,7 @@
   font-family: "Archivo Black";
   font-style: normal;
   font-weight: 400;
-  src: local(""),
-       url(./assets/fonts/ArchivoBlack-Regular.ttf) format("truetype")
+  src: local(""), url(./assets/fonts/ArchivoBlack-Regular.ttf) format("truetype");
 }
 
 html,
@@ -35,6 +34,7 @@ button {
   font-weight: bold;
   font-family: "Archivo Black", sans-serif;
   min-width: 120px;
+  height: 56px;
 }
 
 button:active {
@@ -42,10 +42,12 @@ button:active {
   text-underline-offset: 4px;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   margin: 0;
 }
-          
+
 ul {
   margin: 0;
   padding: 0;
@@ -54,6 +56,15 @@ ul {
 
 ul + ul {
   margin-top: 12px;
+}
+
+li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+li:last-child {
+  margin-bottom: 0;
 }
 
 @keyframes pulse {
