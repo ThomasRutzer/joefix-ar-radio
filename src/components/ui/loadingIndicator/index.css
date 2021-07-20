@@ -30,16 +30,16 @@
   display: block;
   top: 88px;
   left: calc(50vw + 0px);
-  width: 8px;
-  height: 8px;
-  clip-path: ellipse(40% 38% at 50% 50%);
-  background-color: var(--color-red);
+  width: 6px;
+  height: 11px;
+  background-image: url(./../../../assets/images/drop.svg);
+  background-size: contain;
   animation: drop 3s ease-out infinite;
 }
 
 .loading-indicator__drop.loading-indicator__drop--small {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 7px;
   animation-duration: 3.5s;
 }
 
