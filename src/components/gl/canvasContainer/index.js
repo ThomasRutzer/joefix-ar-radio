@@ -1,4 +1,4 @@
-import React, { Suspense, useCallback, useEffect } from "react"
+import React, { useCallback } from "react"
 import {
   ARCanvas,
   NFTMarker

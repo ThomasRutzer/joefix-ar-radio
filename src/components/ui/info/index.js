@@ -15,8 +15,6 @@ const Info = ({ onStartButton }) => {
     delay: show ? 1000 : 0,
     config: config.molasses,
     onRest: () => {
-      console.log(!show ? onStartButton : null);
-
       if (!show) {
         onStartButton()
       }
