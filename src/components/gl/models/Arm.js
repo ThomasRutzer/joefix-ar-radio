@@ -40,7 +40,7 @@ const Arm = props => {
     <animated.group
       ref={groupRef}
       {...props}
-      position={[0.41, 0.11, -0.27]} >
+      position={[0.41, 0.16, -0.27]} >
       <group position={[-0.41, -0.1, 0.15]}>
         <mesh
           geometry={nodes.player003.geometry}
