@@ -7,7 +7,10 @@ import turntableGLTF from "./../../../assets/gltf/turntable.gltf"
 
 const Turntable = props => {
   const matcapBlack = useTexture(matcapAssetBlack)
-  const meshMatcapMaterialBlack = useMemo(() => new MeshMatcapMaterial({matcap: matcapBlack}), [])
+  const meshMatcapMaterialBlack = useMemo(
+    () => new MeshMatcapMaterial({matcap: matcapBlack}), 
+    [matcapBlack]
+  )
   const { nodes } = useGLTF(turntableGLTF)
 
   return (
