@@ -31,26 +31,29 @@ const Info = ({ onStartButton }) => {
             <Media />
             <div className="info__explanation">
               <p className="info__copy">
-                Welcome to the JOE FIX AR Radio. It's experimental, sometimes don't work and it's gonna be loud & fix.
+                Welcome to the JOE FIX AR Radio. It's experimental, sometimes doesn't work and it's gonna be loud & fix.
                 But you'll be just fine, no worries!
               </p>
               <button className="info__cta" onClick={() => setShow(false)}>Show me!</button>
-              <ul>
-                <li>
-                  <ExternalLink label="turntable model" link="https://market.pmnd.rs/model/turntable"></ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink label="vinyl model" link="https://poly.google.com/view/fKJtFLGpHWs"></ExternalLink>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <ExternalLink label="listen on Bandcamp" link="https://joefix1.bandcamp.com/releases"></ExternalLink>
-                </li>
-                <li>
-                  <ExternalLink label="made by Thomas Rutzer" link="https://thomasrutzer.dev/legal"></ExternalLink>
-                </li>
-              </ul>
+              <div className="info__link-list-wrapper">
+                <ul>
+                  <li>
+                    <ExternalLink label="turntable model" link="https://market.pmnd.rs/model/turntable"></ExternalLink>
+                  </li>
+                  <li>
+                    <ExternalLink label="vinyl model" link="https://poly.google.com/view/fKJtFLGpHWs"></ExternalLink>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <ExternalLink label="listen on Bandcamp" link="https://joefix1.bandcamp.com/releases"></ExternalLink>
+                  </li>
+                  <li>
+                    <ExternalLink label="made by Thomas Rutzer" link="https://thomasrutzer.dev/legal"></ExternalLink>
+                  </li>
+                </ul>
+              </div>
+
             </div>
           </div>
         </animated.div>

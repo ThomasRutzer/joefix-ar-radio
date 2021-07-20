@@ -26,6 +26,12 @@
 
 .info__cta {
   display: block;
-  margin: 24px 0;
+  margin: 32px 0 64px 0;
   width: 100%;
+}
+
+.info__link-list-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
 }

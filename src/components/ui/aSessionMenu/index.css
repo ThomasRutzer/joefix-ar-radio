@@ -1,9 +1,9 @@
 .ar-session-menu {
   position: fixed;
+  width: 100%;
   bottom: 0;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   grid-gap: 16px;
   gap: 16px;
   padding: 24px;

@@ -17,12 +17,15 @@
 .media__title {
   position: relative;
   font-size: clamp(1rem, -0.175rem + 8.333vw, 3.5rem);
-  line-height: 1.4;
-  margin-bottom: -10px;
+  line-height: 1.1;
+  margin-bottom: -4px;
   text-transform: uppercase;
 }
 
 .media__subtitle {
   display: block;
-  font-size: clamp(1rem, -0.875rem + 8.333vw, 1.5rem);
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 1rem);
+  margin-bottom: 12px;
+  letter-spacing: 0.1em;
+  font-family: "Archivo Black", sans-serif;
 }

@@ -19,7 +19,7 @@ const ARSessionMenu = () => {
       {labelTransitions(
         (styles, item) => item &&
           <animated.div className="ar-session-menu" style={styles}>
-            <button onClick={() => window.location.reload()}>Close</button>
+            <button onClick={() => window.location.reload()}>Go back</button>
             <button onClick={() => useStore.setState({ mute: !mute })}>
               {mute ? "unmute" : "mute"}
             </button>
