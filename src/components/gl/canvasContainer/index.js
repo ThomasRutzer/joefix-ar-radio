@@ -7,7 +7,7 @@ import {
 import { useGLTF } from "@react-three/drei"
 
 import turntableGlTF from "./../../../assets/gltf/turntable.gltf"
-import vinylGLTF from "./../../../assets/gltf/vinyl.glb"
+import vinylGLTF from "./../../../assets/gltf/Vinyl_disc.glb"
 import { TRACKED_IMAGE_SIZE, VIEWS } from "./../../../config"
 import useStore from "./../../../store"
 import Scene from "./../Scene"
@@ -38,6 +38,7 @@ const CanvasContainer = () => {
             <ARCanvas
               interpolationFactor={24}
               dpr={window.devicePixelRatio}
+              camera={{ far: 2000 }}
               onCreated={({ gl }) => {
                 gl.setPixelRatio(Math.min(window.devicePixelRatio, 2))
                 gl.setSize(window.innerWidth, window.innerHeight)
