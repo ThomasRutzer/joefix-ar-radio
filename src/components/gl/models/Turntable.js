@@ -24,7 +24,7 @@ const Turntable = props => {
           geometry={nodes.player.geometry}
           castShadow
           receiveShadow
-          position={[0, 0.05, 0]}
+          position={[0, 0, 0]}
           rotation={[0, 1.57, 0]} />
         <group position={[0, 0.1, 0]} rotation={[0, 1.57, 0]}>
           <mesh
@@ -69,7 +69,7 @@ const Turntable = props => {
           material={meshMatcapMaterialBlack}
           castShadow
           receiveShadow
-          position={[0.41, 0.16, -0.2]}
+          position={[0.41, 0.14, -0.2]}
           rotation={[0, 1.57, 0]} />
         <mesh
           geometry={nodes.player002.geometry}
