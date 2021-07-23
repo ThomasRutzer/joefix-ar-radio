@@ -68,9 +68,9 @@ function Scene() {
 
         <group
           scale={[
-            TRACKED_IMAGE_SIZE.width, 
-            TRACKED_IMAGE_SIZE.height, 
-            TRACKED_IMAGE_SIZE.depth
+            TRACKED_IMAGE_SIZE.width * 1.2, 
+            TRACKED_IMAGE_SIZE.height * 1.2, 
+            TRACKED_IMAGE_SIZE.depth * 1.2
           ]}
           rotation={[Math.PI / 2, 0, 0]}
         >
