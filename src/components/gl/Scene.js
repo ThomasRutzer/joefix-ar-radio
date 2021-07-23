@@ -13,7 +13,7 @@ import InfoText from "./InfoText"
 function Scene() {
   const tweaks = useControls({
     ambientLightIntensitity: 1,
-    pointLightIntensitiy: 5,
+    pointLightIntensitiy: 3,
     pointLightPos: {
       value: { x: 0, y: 10, z: 0 },
       step: 1,
