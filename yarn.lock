@@ -9481,9 +9481,9 @@ react-spring@^9.2.4:
     "@react-spring/web" "~9.2.0"
     "@react-spring/zdog" "~9.2.0"
 
-"react-three-arnft@github:thomasrutzer/react-three-arnft#b5c5d08":
+"react-three-arnft@github:thomasrutzer/react-three-arnft#03eb550":
   version "0.1.2"
-  resolved "https://codeload.github.com/thomasrutzer/react-three-arnft/tar.gz/b5c5d083b87ec4fcfbf9f06fd7228befee9b694b"
+  resolved "https://codeload.github.com/thomasrutzer/react-three-arnft/tar.gz/03eb55055ee53f09b5d2f1a7a59a3eb53f12f984"
 
 react-three-fiber@0.0.0-deprecated:
   version "0.0.0-deprecated"
