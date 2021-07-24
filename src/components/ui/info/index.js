@@ -39,7 +39,7 @@ const Info = ({ onStartButton }) => {
                     <ExternalLink label="turntable model" link="https://market.pmnd.rs/model/turntable"></ExternalLink>
                   </li>
                   <li>
-                    <ExternalLink label="vinyl model" link="https://poly.google.com/view/fKJtFLGpHWs"></ExternalLink>
+                    <ExternalLink label="vinyl model" link="https://www.turbosquid.com/3d-models/disc-vinyl-3d-model-1608654"></ExternalLink>
                   </li>
                 </ul>
                 <ul>
