@@ -6,16 +6,13 @@ import useStore from "../../store"
 import { APP_STATES, DELAY_UNTIL_SONG_STARTS } from "../../config"
 import useTimeout from "../../hooks/useTimout"
 import AudioPlayer from "./AudioPlayer"
-import useAppleSafariSoundHack from "./useAppleSafariSoundHack"
+
 const Sound = () => {
   const appState = useStore(state => state.appState)
   const mute = useStore(state => state.mute)
   const [songShallPlay, setSongShallPlay] = useState(null)
   const [scheduleSongToPlay, setSchedulerForSongPlay] = useState(null)
   const [atmoShallPlay, setAtmoShallPlay] = useState(null)
-
-  useAppleSafariSoundHack([songAsset, atmoSoundAsset])
-
 
   useTimeout(() => setSongShallPlay(true), scheduleSongToPlay ? DELAY_UNTIL_SONG_STARTS : null)
 

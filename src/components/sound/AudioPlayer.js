@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import useAppleSafariSoundHack from "./useAppleSafariSoundHack";
 
 const AudioPlayer = ({ 
   src, srcType = "mp3", shallPlay,
@@ -7,6 +8,8 @@ const AudioPlayer = ({
 }) => {
   const audioRef = useRef()
   const [isPlaying, setIsPlaying] = useState(false)
+
+  useAppleSafariSoundHack(audioRef, src)
 
   useEffect(() => {
     async function tryPlay() {
