@@ -10,7 +10,7 @@ const useAppleSafariSoundHack = (audioNodeRef, soundAsset) => {
     document.body.removeEventListener("touchstart", unlockAudio)
   }
 
-  function isAppleDevice() {
+  function isSafariDevice() {
     const ua = navigator.userAgent.toLowerCase();
     return ua.indexOf('safari') !== -1 && !ua.indexOf('chrome') > -1
   }
@@ -18,7 +18,7 @@ const useAppleSafariSoundHack = (audioNodeRef, soundAsset) => {
   useEffect(() => {
     if (!audioNodeRef.current) { return }
 
-    if (isAppleDevice()) {
+    if (isSafariDevice()) {
       document.body.addEventListener("click", unlockAudio)
       document.body.addEventListener("touchstart", unlockAudio)
     }
