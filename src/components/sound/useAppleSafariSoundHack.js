@@ -3,7 +3,6 @@ import { useEffect } from "react"
 const useAppleSafariSoundHack = soundAssets => {
   function unlockAudio() {
     soundAssets.map(soundAsset => {
-      console.log(soundAsset);
       const sound = new Audio(soundAsset)
 
       sound.play()
