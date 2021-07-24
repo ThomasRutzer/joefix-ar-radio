@@ -44,6 +44,9 @@ const CanvasContainer = () => {
                 gl.setSize(window.innerWidth, window.innerHeight)
               }}
               onWorkerMessage={onWorkerMessage}
+              cameraParamUrl={`${process.env.PUBLIC_URL}/data/camera_para.dat`}
+              workerScriptUrl={`${process.env.PUBLIC_URL}/js/arnft.worker.js`}
+
             >
               <NFTMarker
 
