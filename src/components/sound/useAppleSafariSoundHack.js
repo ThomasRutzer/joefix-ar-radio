@@ -1,28 +1,27 @@
-import { useEffect } from "react"
+import { useCallback, useEffect } from "react"
 
-const useAppleSafariSoundHack = (audioNodeRef, soundAsset) => {
-  function unlockAudio() {
+const useAppleSafariSoundHack = audioNodeRef => {
+  const unlockAudio = useCallback(() => {
+    if (!audioNodeRef.current) { return }
+    
     audioNodeRef.current.play()
     audioNodeRef.current.pause()
     audioNodeRef.current.currentTime = 0
 
     document.body.removeEventListener("click", unlockAudio)
     document.body.removeEventListener("touchstart", unlockAudio)
-  }
-
-  function isSafariDevice() {
-    const ua = navigator.userAgent.toLowerCase();
-    return ua.indexOf('safari') !== -1 && !ua.indexOf('chrome') > -1
-  }
+  }, [audioNodeRef])
 
   useEffect(() => {
     if (!audioNodeRef.current) { return }
 
-    if (isSafariDevice()) {
+    const ua = navigator.userAgent.toLowerCase()
+
+    if (ua.indexOf('safari') !== -1 && !ua.indexOf('chrome') > -1) {
       document.body.addEventListener("click", unlockAudio)
       document.body.addEventListener("touchstart", unlockAudio)
     }
-  }, [audioNodeRef])
+  }, [audioNodeRef, unlockAudio])
 }
 
 export default useAppleSafariSoundHack
