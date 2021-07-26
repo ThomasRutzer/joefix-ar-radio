@@ -3,7 +3,7 @@ import { animated } from "@react-spring/three"
 import { useEffect, useRef } from "react"
 import { useFrame } from "@react-three/fiber"
 
-import vinylGLTF from "./../../assets/gltf/Vinyl_disc.glb"
+import vinylGLTF from "./../../assets/gltf/vinyl.glb"
 import useStore from "../../store"
 import { APP_STATES } from "../../config"
 
