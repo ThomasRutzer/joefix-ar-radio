@@ -7,7 +7,8 @@ import {
 import { useGLTF } from "@react-three/drei"
 
 import turntableGlTF from "./../../../assets/gltf/turntable.gltf"
-import vinylGLTF from "./../../../assets/gltf/Vinyl_disc.glb"
+import vinylGLTF from "./../../../assets/gltf/vinyl.glb"
+import explosionGLTF from "./../../../assets/gltf/explosion.glb"
 import { TRACKED_IMAGE_SIZE, VIEWS } from "./../../../config"
 import useStore from "./../../../store"
 import Scene from "./../Scene"
@@ -75,5 +76,6 @@ const CanvasContainer = () => {
 
 useGLTF.preload(turntableGlTF)
 useGLTF.preload(vinylGLTF)
+useGLTF.preload(explosionGLTF)
 
 export default CanvasContainer
