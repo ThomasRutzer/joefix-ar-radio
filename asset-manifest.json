@@ -1,23 +1,22 @@
 {
   "files": {
     "main.css": "/joefix-ar-radio/static/css/main.4319e926.chunk.css",
-    "main.js": "/joefix-ar-radio/static/js/main.4dd06485.chunk.js",
-    "main.js.map": "/joefix-ar-radio/static/js/main.4dd06485.chunk.js.map",
-    "runtime-main.js": "/joefix-ar-radio/static/js/runtime-main.96476266.js",
-    "runtime-main.js.map": "/joefix-ar-radio/static/js/runtime-main.96476266.js.map",
+    "main.js": "/joefix-ar-radio/static/js/main.6cc9eca5.chunk.js",
+    "main.js.map": "/joefix-ar-radio/static/js/main.6cc9eca5.chunk.js.map",
+    "runtime-main.js": "/joefix-ar-radio/static/js/runtime-main.3c925e77.js",
+    "runtime-main.js.map": "/joefix-ar-radio/static/js/runtime-main.3c925e77.js.map",
     "static/js/2.b186e94a.chunk.js": "/joefix-ar-radio/static/js/2.b186e94a.chunk.js",
     "static/js/2.b186e94a.chunk.js.map": "/joefix-ar-radio/static/js/2.b186e94a.chunk.js.map",
     "static/js/3.f9937121.chunk.js": "/joefix-ar-radio/static/js/3.f9937121.chunk.js",
     "static/js/3.f9937121.chunk.js.map": "/joefix-ar-radio/static/js/3.f9937121.chunk.js.map",
     "static/css/4.4b70ce40.chunk.css": "/joefix-ar-radio/static/css/4.4b70ce40.chunk.css",
-    "static/js/4.4b7b264c.chunk.js": "/joefix-ar-radio/static/js/4.4b7b264c.chunk.js",
-    "static/js/4.4b7b264c.chunk.js.map": "/joefix-ar-radio/static/js/4.4b7b264c.chunk.js.map",
+    "static/js/4.256fbaf8.chunk.js": "/joefix-ar-radio/static/js/4.256fbaf8.chunk.js",
+    "static/js/4.256fbaf8.chunk.js.map": "/joefix-ar-radio/static/js/4.256fbaf8.chunk.js.map",
     "index.html": "/joefix-ar-radio/index.html",
     "static/css/4.4b70ce40.chunk.css.map": "/joefix-ar-radio/static/css/4.4b70ce40.chunk.css.map",
     "static/css/main.4319e926.chunk.css.map": "/joefix-ar-radio/static/css/main.4319e926.chunk.css.map",
     "static/js/3.f9937121.chunk.js.LICENSE.txt": "/joefix-ar-radio/static/js/3.f9937121.chunk.js.LICENSE.txt",
     "static/media/style.css": "/joefix-ar-radio/static/media/ArchivoBlack-Regular.2068ceb7.ttf",
-    "static/media/Vinyl_disc.b9e959ff.glb": "/joefix-ar-radio/static/media/Vinyl_disc.b9e959ff.glb",
     "static/media/analyzed.a1b0ce3d.mp3": "/joefix-ar-radio/static/media/analyzed.a1b0ce3d.mp3",
     "static/media/atmo.5e0eb98a.mp3": "/joefix-ar-radio/static/media/atmo.5e0eb98a.mp3",
     "static/media/index.css": "/joefix-ar-radio/static/media/logo-chrome.5a83c4f5.png",
@@ -25,12 +24,13 @@
     "static/media/logo-white.7bf120c1.png": "/joefix-ar-radio/static/media/logo-white.7bf120c1.png",
     "static/media/song.a30f0198.mp3": "/joefix-ar-radio/static/media/song.a30f0198.mp3",
     "static/media/tracked-image.2c278093.png": "/joefix-ar-radio/static/media/tracked-image.2c278093.png",
-    "static/media/turntable.9cbc22ed.gltf": "/joefix-ar-radio/static/media/turntable.9cbc22ed.gltf"
+    "static/media/turntable.9cbc22ed.gltf": "/joefix-ar-radio/static/media/turntable.9cbc22ed.gltf",
+    "static/media/vinyl.b9e959ff.glb": "/joefix-ar-radio/static/media/vinyl.b9e959ff.glb"
   },
   "entrypoints": [
-    "static/js/runtime-main.96476266.js",
+    "static/js/runtime-main.3c925e77.js",
     "static/js/3.f9937121.chunk.js",
     "static/css/main.4319e926.chunk.css",
-    "static/js/main.4dd06485.chunk.js"
+    "static/js/main.6cc9eca5.chunk.js"
   ]
 }
