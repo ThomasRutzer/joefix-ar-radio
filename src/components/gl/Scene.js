@@ -9,6 +9,7 @@ import Vinyl from "./models/Vinyl"
 import Turntable from "./models/Turntable"
 import Arm from "./models/Arm"
 import InfoText from "./InfoText"
+import Explosion from "./Explosion"
 
 function Scene() {
   const tweaks = useControls({
@@ -27,7 +28,7 @@ function Scene() {
 
   const orbitControlsRef = useRef()
 
-  const enterTransitionTurntable= useSpring({
+  const enterTransitionTurntable = useSpring({
     to: { position: [0, 0, 0], rotation: [0, 0, 0] },
     from: { position: [0, 0, -2], rotation: [0, Math.PI * 3, 0] },
     config: { mass: 0.4, tension: 60, friction: 14 }
@@ -52,7 +53,7 @@ function Scene() {
     config: {
       duration: 1000
     },
-    onRest:() => useStore.setState({ appState: APP_STATES.SHALL_PLAY })
+    onRest: () => useStore.setState({ appState: APP_STATES.SHALL_PLAY })
   })
 
   const enterTransitionInfoText = useSpring({
@@ -74,10 +75,11 @@ function Scene() {
           ]}
           rotation={[Math.PI / 2, 0, 0]}
         >
+          <Explosion />
           <InfoText {...enterTransitionInfoText} />
           <Vinyl {...enterTransitionVinyl} />
           <animated.group {...enterTransitionTurntable}>
-            <Arm {...enterTransitionArm}/>
+            <Arm {...enterTransitionArm} />
             <Turntable />
           </animated.group>
           <ambientLight intensity={tweaks.ambientLightIntensitity} />

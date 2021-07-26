@@ -5,10 +5,11 @@ import { VIEWS } from "./config"
 const store = create(set => ({
   view: VIEWS.INTRO,
   appState: null,
-  arEngineReady: false,
-  sceneEntered: false,
+  arEngineReady: true,
+  sceneEntered: true,
   mute: false,
-  currentSongDuration: null
+  currentSongDuration: null,
+  audioAnalyseState: { signal: false }
 }))
 
 export default store
