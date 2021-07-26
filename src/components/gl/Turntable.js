@@ -2,8 +2,8 @@ import { useGLTF, useTexture } from "@react-three/drei"
 import { useMemo } from "react"
 import { MeshMatcapMaterial } from "three"
 
-import matcapAssetBlack from "./../../../assets/images/matcap/black.png"
-import turntableGLTF from "./../../../assets/gltf/turntable.gltf"
+import matcapAssetBlack from "./../../assets/images/matcap/black.png"
+import turntableGLTF from "./../../assets/gltf/turntable.gltf"
 
 const Turntable = props => {
   const matcapBlack = useTexture(matcapAssetBlack)

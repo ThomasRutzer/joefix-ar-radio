@@ -3,10 +3,10 @@ import { useFrame } from "@react-three/fiber"
 import { useGLTF, useTexture } from "@react-three/drei"
 import { animated, SpringValue } from "@react-spring/three"
 
-import matcapAssetWhite from "./../../../assets/images/matcap/white.png"
-import turntableGLTF from "./../../../assets/gltf/turntable.gltf"
-import { APP_STATES } from "./../../../config"
-import useStore from "./../../../store"
+import matcapAssetWhite from "./../../assets/images/matcap/white.png"
+import turntableGLTF from "./../../assets/gltf/turntable.gltf"
+import { APP_STATES } from "./../../config"
+import useStore from "./../../store"
 
 const Y_ROTATION_SOUND_ENDED = -0.45
 const Y_ROTATION_PREPARED = -0.09

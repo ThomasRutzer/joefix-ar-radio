@@ -5,9 +5,9 @@ import { useControls } from "leva"
 
 import { APP_STATES, TRACKED_IMAGE_SIZE } from "./../../config"
 import useStore from "../../store"
-import Vinyl from "./models/Vinyl"
-import Turntable from "./models/Turntable"
-import Arm from "./models/Arm"
+import Vinyl from "./Vinyl"
+import Turntable from "./Turntable"
+import Arm from "./Arm"
 import InfoText from "./InfoText"
 import Explosion from "./Explosion"
 
