@@ -1,12 +1,25 @@
 .ar-session-menu {
   position: fixed;
   width: 100%;
-  bottom: 0;
+  top: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   grid-gap: 16px;
   gap: 16px;
   padding: 24px;
   box-sizing: border-box;
   z-index: 98;
+}
+
+
+.ar-session-menu__close {
+  position: fixed;
+  width: 56px;
+  top: 24px;
+  right: 24px;
+  z-index: 98;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
 }

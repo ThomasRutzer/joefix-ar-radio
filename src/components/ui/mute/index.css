@@ -1,0 +1,13 @@
+.mute {
+  display: flex;
+  justify-content: space-between;
+  width: 64px;
+  cursor: pointer;
+  min-width: auto;
+}
+
+.mute__bar {
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-red);
+}
