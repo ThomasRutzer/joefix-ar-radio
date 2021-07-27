@@ -6,14 +6,14 @@ import {
 // import { Canvas as ARCanvas } from "@react-three/fiber"
 import { useGLTF } from "@react-three/drei"
 
-import turntableGlTF from "./../../../assets/gltf/turntable.gltf"
-import vinylGLTF from "./../../../assets/gltf/vinyl.glb"
-import explosionGLTF from "./../../../assets/gltf/explosion.glb"
-import { TRACKED_IMAGE_SIZE, VIEWS } from "./../../../config"
-import useStore from "./../../../store"
-import Scene from "./../Scene"
-import FocusHint from "./../../ui/FocusHint"
-import ARSessionMenu from "../../ui/aSessionMenu"
+import turntableGlTF from "./../../assets/gltf/turntable.gltf"
+import vinylGLTF from "./../../assets/gltf/vinyl.glb"
+import explosionGLTF from "./../../assets/gltf/explosion.glb"
+import { TRACKED_IMAGE_SIZE, VIEWS } from "./../../config"
+import useStore from "./../../store"
+import Scene from "./Scene"
+import FocusHint from "./../ui/FocusHint"
+import ARSessionMenu from "./../ui/aSessionMenu"
 
 const CanvasContainer = () => {
   const view = useStore(store => store.view)

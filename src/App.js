@@ -6,13 +6,12 @@ import { VIEWS } from "./config"
 import Sound from "./components/sound"
 import Info from "./components/ui/info"
 import LoadingIndicator from "./components/ui/loadingIndicator"
-const CanvasContainer = lazy(() => import("./components/gl/canvasContainer"))
+const CanvasContainer = lazy(() => import("./components/gl/CanvasContainer"))
 
 const App = () => {
 
   return (
     <>
-
       <LoadingIndicator />
 
       <Info onStartButton={() => useStore.setState({ view: VIEWS.SCENE })} />
