@@ -1,11 +1,16 @@
 .info {
   position: fixed;
   bottom: 0;
-  left: 12px;
-  right: 12px;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
   overflow: hidden;
   overflow-y: scroll;
   z-index: 99;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 .info__content {
@@ -26,12 +31,6 @@
 
 .info__cta {
   display: block;
-  margin: 32px 0 64px 0;
+  margin: 32px 0 0 0;
   width: 100%;
-}
-
-.info__link-list-wrapper {
-  display: flex;
-  gap: 24px;
-  align-items: flex-end;
 }

@@ -1,0 +1,17 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.footer__content {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  padding: 24px;
+  gap: 24px;
+  align-items: flex-end;
+}
