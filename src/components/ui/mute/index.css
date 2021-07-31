@@ -42,6 +42,6 @@
   }
 
   to {
-    opacity: scaleY(1);
+    transform: scaleY(1);
   }
 }

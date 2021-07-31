@@ -17,7 +17,7 @@ const Mute = props => {
           .map(index => (
             <span   
               key={index} 
-              className={`mute__bar mute__bar--${index + 1}`}>
+              className={`mute__bar mute__bar--${index}`}>
               </span>
           ))
       }
