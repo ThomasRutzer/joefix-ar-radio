@@ -40,7 +40,6 @@ const Sound = () => {
   return (
     <>
       <AudioAnalyzer 
-        shallPrepareAnalyze={scheduleSongToPlay}
         shallAnalyze={analyzeShallStart} 
         src={analyzedSoundAsset} />
       <AudioPlayer

@@ -39,7 +39,7 @@ async function createAudio(url, threshold = 10) {
   return state
 }
 
-const AudioAnalyzer = ({ src, shallAnalyze, shallPrepareAnalyze }) => {
+const AudioAnalyzer = ({ src, shallAnalyze }) => {
   const [audio, setAudio] = useState(null)
 
   useEffect(() => {
@@ -48,13 +48,13 @@ const AudioAnalyzer = ({ src, shallAnalyze, shallPrepareAnalyze }) => {
       setAudio(createdAudio)
     }
 
-    if (!audio && shallPrepareAnalyze) {
+    if (!audio) {
       createAudioFromSrc()
     }
-  }, [audio, src, shallPrepareAnalyze])
+  }, [audio, src])
 
   useEffect(() => {
-    if (shallAnalyze) {
+    if (shallAnalyze && audio) {
       audio.source.start(0)
 
       addEffect(() => {
