@@ -4,7 +4,7 @@ import songAsset from "./../../assets/sounds/song.mp3"
 import atmoSoundAsset from "./../../assets/sounds/atmo.mp3"
 import analyzedSoundAsset from "./../../assets/sounds/analyzed.mp3"
 import useStore from "../../store"
-import { APP_STATES, DELAY_UNTIL_SONG_STARTS, DELAY_UNTIL_ANALYTE_STARTS } from "../../config"
+import { APP_STATES, DELAY_UNTIL_SONG_STARTS, DELAY_UNTIL_ANALYZER_STARTS } from "../../config"
 import useTimeout from "../../hooks/useTimout"
 import AudioPlayer from "./AudioPlayer"
 import AudioAnalyzer from "./AudioAnalyzer"
@@ -18,7 +18,7 @@ const Sound = () => {
   const [atmoShallPlay, setAtmoShallPlay] = useState(null)
 
   useTimeout(() => setSongShallPlay(true), scheduleSongToPlay ? DELAY_UNTIL_SONG_STARTS : null)
-  useTimeout(() => setAnalyzeShallStart(true), scheduleSongToPlay ? DELAY_UNTIL_ANALYTE_STARTS : null)
+  useTimeout(() => setAnalyzeShallStart(true), scheduleSongToPlay ? DELAY_UNTIL_ANALYZER_STARTS : null)
 
   useEffect(() => {
     switch (appState) {

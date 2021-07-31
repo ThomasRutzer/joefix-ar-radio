@@ -44,7 +44,6 @@ const Arm = props => {
       <group position={[-0.41, -0.1, 0.15]}>
         <mesh
           geometry={nodes.player003.geometry}
-          // material={nodes.player003.material}
           castShadow
           receiveShadow
           position={[0.29, 0.1, 0.27]}
@@ -54,7 +53,6 @@ const Arm = props => {
         </mesh>
         <mesh
           geometry={nodes.Vert.geometry}
-          // material={nodes.Vert.material}
           castShadow
           receiveShadow
           position={[0.41, 0.1, -0.13]}
@@ -63,7 +61,6 @@ const Arm = props => {
         </mesh>
         <mesh
           geometry={nodes.needke.geometry}
-          // material={nodes.needke.material}
           castShadow
           receiveShadow>
           <meshMatcapMaterial matcap={matcapWhite} />

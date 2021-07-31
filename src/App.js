@@ -13,8 +13,8 @@ const App = () => {
   return (
     <>
       <LoadingIndicator />
-
       <Info onStartButton={() => useStore.setState({ view: VIEWS.SCENE })} />
+
       <>
         <Suspense fallback={<LoadingIndicator />}>
           <CanvasContainer />

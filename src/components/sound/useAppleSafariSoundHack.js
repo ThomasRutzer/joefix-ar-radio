@@ -17,7 +17,7 @@ const useAppleSafariSoundHack = audioNodeRef => {
 
     const ua = navigator.userAgent.toLowerCase()
 
-    if (ua.indexOf('safari') !== -1 && !ua.indexOf('chrome') > -1) {
+    if (ua.indexOf("safari") !== -1 && !ua.indexOf("chrome") > -1) {
       document.body.addEventListener("click", unlockAudio)
       document.body.addEventListener("touchstart", unlockAudio)
     }

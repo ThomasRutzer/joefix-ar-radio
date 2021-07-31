@@ -24,7 +24,7 @@ const LoadingIndicator = () => {
   })
 
   useTimeout(() => {
-    document.querySelector("meta[name='theme-color']").setAttribute("content", "#e2192c");
+    document.querySelector("meta[name='theme-color']").setAttribute("content", "#e2192c")
   }, 90000)
 
   return (

@@ -1,6 +1,6 @@
 /** based on https://codesandbox.io/s/audio-analyser-forked-nck96?file=/src/App.js **/
 import { useEffect, useState } from "react"
-import { addEffect } from '@react-three/fiber'
+import { addEffect } from "@react-three/fiber"
 
 import useStore from "./../../store"
 

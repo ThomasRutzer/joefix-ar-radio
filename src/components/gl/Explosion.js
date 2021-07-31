@@ -10,7 +10,6 @@ import useStore from "./../../store"
 const Explosion = props => {
   const sceneRef = useRef()
   const instance = useRef()
-  // The GLTF only contains a point-cloud and baked keyframes for the explosion
   const { scene: originalScene, animations } = useGLTF(explosionGLTF)
   const scene = useMemo(() => originalScene.clone(true), [originalScene])
   const { actions, mixer } = useAnimations(animations, sceneRef)

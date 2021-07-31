@@ -1,5 +1,5 @@
 export const DELAY_UNTIL_SONG_STARTS = 3000
-export const DELAY_UNTIL_ANALYTE_STARTS = 2400
+export const DELAY_UNTIL_ANALYZER_STARTS = 2400
 
 export const VIEWS = {
   INTRO: "intro",
