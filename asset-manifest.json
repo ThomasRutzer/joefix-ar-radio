@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/joefix-ar-radio/static/css/main.22c6f053.chunk.css",
-    "main.js": "/joefix-ar-radio/static/js/main.1885bb77.chunk.js",
-    "main.js.map": "/joefix-ar-radio/static/js/main.1885bb77.chunk.js.map",
+    "main.js": "/joefix-ar-radio/static/js/main.8b3803ec.chunk.js",
+    "main.js.map": "/joefix-ar-radio/static/js/main.8b3803ec.chunk.js.map",
     "runtime-main.js": "/joefix-ar-radio/static/js/runtime-main.497a6779.js",
     "runtime-main.js.map": "/joefix-ar-radio/static/js/runtime-main.497a6779.js.map",
     "static/js/2.619b32ea.chunk.js": "/joefix-ar-radio/static/js/2.619b32ea.chunk.js",
@@ -31,6 +31,6 @@
     "static/js/runtime-main.497a6779.js",
     "static/js/3.520c2dcd.chunk.js",
     "static/css/main.22c6f053.chunk.css",
-    "static/js/main.1885bb77.chunk.js"
+    "static/js/main.8b3803ec.chunk.js"
   ]
 }
