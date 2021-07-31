@@ -11,3 +11,37 @@
   height: 100%;
   background-color: var(--color-red);
 }
+
+.mute--off .mute__bar {
+  animation: audio 0.3s linear infinite alternate-reverse;
+}
+
+.mute--on .mute__bar {
+  transform: scaleY(0.3);
+}
+
+.mute__bar.mute__bar--1 {
+  animation-delay: 0.1s;
+}
+
+.mute__bar.mute__bar--2 {
+  animation-delay: 0.2s;
+}
+
+.mute__bar.mute__bar--3 {
+  animation-delay: 0.3s;
+}
+
+.mute__bar.mute__bar--4 {
+  animation-delay: 0.4s;
+}
+
+@keyframes audio {
+  from {
+    transform: scaleY(0.3);
+  }
+
+  to {
+    opacity: scaleY(1);
+  }
+}
