@@ -29,7 +29,42 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "import/order": [
+        2,
+        {
+          "groups": [
+            [
+              "builtin",
+              "external"
+            ],
+            [
+              "internal",
+              "parent",
+              "sibling",
+              "index"
+            ]
+          ]
+        }
+      ],
+      "quote-props": [
+        2,
+        "consistent-as-needed"
+      ],
+      "quotes": [
+        2,
+        "double",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "semi-spacing": 2,
+      "semi": [
+        2,
+        "never"
+      ]
+    }
   },
   "browserslist": {
     "production": [
