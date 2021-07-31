@@ -25,7 +25,7 @@ const Info = ({ onStartButton }) => {
     from: { opacity: 0, y: 30 },
     enter: { opacity: 1, y: 0 },
     leave: { opacity: 0, y: 30 },
-    delay: show ? 800 : 0,
+    delay: show ? 1000 : 0,
     config: config.molasses
   })
 
